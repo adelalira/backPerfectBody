@@ -41,7 +41,7 @@ public class CorsConfig implements WebMvcConfigurer {
 				 /**
 				  * CORS PARA MOSTRAR TODOS LOS SERVICIOS DE LA APLICACIÓN
 				  */
-				 registry.addMapping("/servicios").allowedOrigins("http://localhost:4200")
+				 registry.addMapping("/servicios").allowedOrigins("https://adelalira.github.io/administracionCitasAngular")
 	                .allowedHeaders("GET", "POST", "DELETE", "OPTIONS", "PUT", "Content-Type", "X-Requested-With", "accept", "Origin", "Access-Control-Request-Method",
 	                       "Authorization", "Access-Control-Request-Headers")
 	                .exposedHeaders("Access-Control-Allow-Origin", "Access-Control-Allow-Credentials");
