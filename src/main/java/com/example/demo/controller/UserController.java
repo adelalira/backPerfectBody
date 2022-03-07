@@ -260,6 +260,23 @@ public class UserController {
     	
 		smtpMailSender.send(datos.getTo(), datos.getSubject(), datos.getText());
 	}  
+    
+    /**
+     * GET PARA DAR LAS LINEAS DE LA CITA
+     * @param idC
+     * @return
+     */
+    @GetMapping("/cita/{idC}")
+   	public List<LineaCitaServicios>  mostrarCita(@PathVariable Long idC) {
+       	
+    	List<LineaCitaServicios> result= citaService.mostrarCita(idC);
+   		
+   		if (result == null) {
+   			throw new CitaNotFoundException(idC);
+   		} else {
+   			return result;
+   		}
+   	}
 	
 	/**
 	 * MANEJO DE ERRORES. CONTROL DE LA EXCEPCIÓN EN EL CASO DE QUE EL USUARIO CON LA ID INTRODUCIDA

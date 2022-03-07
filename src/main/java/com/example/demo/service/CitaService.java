@@ -10,6 +10,7 @@ import com.example.demo.error.CitaExistException;
 import com.example.demo.error.EmailPasswordException;
 import com.example.demo.error.PasswordException;
 import com.example.demo.model.Cita;
+import com.example.demo.model.LineaCitaServicios;
 import com.example.demo.model.Usuario;
 import com.example.demo.repository.CitaRepo;
 import com.example.demo.repository.UserRepo;
@@ -119,6 +120,13 @@ public class CitaService {
 		}
 	}
 	
+	
+	public List<LineaCitaServicios> mostrarCita(Long idC) {
+		Cita cita = repositorio.findById(idC).orElse(null);
+		
+		
+		return cita.getListaServicios();
+	}
 	
 	
 
